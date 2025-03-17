@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { v4 as uuid } from "uuid"
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { StyledToastContainer } from "./components/style"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 
-import { Container, ContainerList, Input, Button, ListItem, Trash, Check, H3 } from './components/style'
+import { Container, Title, ContainerList, Input, Button, ListItem, Trash, Check, H3 } from './components/style'
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
   return (
 
     <Container>
+      <Title>Lista de Tarefas</Title>
       <ContainerList>
         <Input onChange={inputChange} placeholder='O que tenho para fazer...' />
 
@@ -69,7 +71,7 @@ function App() {
           }
         </ul>
       </ContainerList>
-      <ToastContainer position="top-center" autoClose={2000} theme="colored" />
+      <StyledToastContainer autoClose={2000} position="top-center" />
 
     </Container>
   )
